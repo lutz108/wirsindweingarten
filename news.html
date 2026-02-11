@@ -1,52 +1,18 @@
 ---
+layout: default
+title: News Archiv
 ---
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News Archiv - Wir sind Weingarten</title>
-    <link rel="stylesheet" href="/style.css">
-</head>
-<body>
 
-    <nav>
-        <ul>
-            <li><a href="/">Zurück zur Startseite</a></li>
-        </ul>
-    </nav>
-
-    <main>
+<main>
+    <section>
         <h1>Alle Neuigkeiten</h1>
-        <p>Hier findet ihr alle bisherigen Berichte unseres Bündnisses.</p>
-
         {% for post in paginator.posts %}
         <article>
             <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
             <p><small>{{ post.date | date: "%d. %B %Y" }}</small></p>
-            <p>{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
-            <a href="{{ post.url }}">Vollständigen Beitrag lesen</a>
+            {{ post.excerpt }}
         </article>
         {% endfor %}
 
-        {% if paginator.total_pages > 1 %}
-        <div class="pagination" style="margin-top: 40px; text-align: center;">
-            {% if paginator.previous_page %}
-                <a href="{{ paginator.previous_page_path }}" class="cta-button" style="background: #0056b3; color: white;">&laquo; Neuer</a>
-            {% endif %}
-
-            <span class="page-number">Seite {{ paginator.page }} von {{ paginator.total_pages }}</span>
-
-            {% if paginator.next_page %}
-                <a href="{{ paginator.next_page_path }}" class="cta-button" style="background: #0056b3; color: white;">Älter &raquo;</a>
-            {% endif %}
-        </div>
-        {% endif %}
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Wir sind Weingarten</p>
-    </footer>
-
-</body>
-</html>
+        </section>
+</main>
