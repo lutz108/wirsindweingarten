@@ -36,7 +36,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #0056b3;
+    color: #8b0000;
     font-weight: bold;
     transition: color 0.3s;
 }
@@ -48,7 +48,7 @@ nav ul li a:hover {
 /* 3. Hero-Bereich (Header) */
 .hero {
     background: linear-gradient(rgba(0, 86, 179, 0.85), rgba(0, 86, 179, 0.85)), 
-                url('https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1200&q=80');
+                url('assets/weingarten.jpg');
     background-size: cover;
     background-position: center;
     color: white;
@@ -110,7 +110,7 @@ section {
 }
 
 h2 {
-    color: #0056b3;
+    color: #8b0000;
     border-bottom: 3px solid #ffcc00;
     display: inline-block;
     padding-bottom: 5px;
@@ -129,7 +129,7 @@ h2 {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    border-top: 4px solid #0056b3;
+    border-top: 4px solid #8b0000;
 }
 
 /* 6. Blog / News Beiträge */
