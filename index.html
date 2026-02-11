@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -8,6 +10,15 @@
 </head>
 <body>
 
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="#ueber-uns">Über uns</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+    </nav>
+
     <header class="hero">
         <div class="hero-content">
             <h1>Wir sind Weingarten</h1>
@@ -16,32 +27,58 @@
         </div>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#ueber-uns">Über uns</a></li>
-            <li><a href="#news">News</a></li>
-            <li><a href="#kontakt">Kontakt</a></li>
-        </ul>
-    </nav>
-
     <main>
         <section id="ueber-uns">
             <h2>Über unser Bündnis</h2>
-            <p>Hier kommt dein Infotext hin. Beschreibe kurz, wer ihr seid und was eure Ziele in Weingarten sind.</p>
+            <p>Hier kommt dein Infotext hin. Beschreibe kurz, wer ihr seid und was eure Ziele in Weingarten sind. Wir setzen uns für ein lebendiges Miteinander ein.</p>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>Nachbarschaft</h3>
+                    <p>Wir fördern den Austausch zwischen allen Generationen in Weingarten.</p>
+                </div>
+                <div class="card">
+                    <h3>Gestaltung</h3>
+                    <p>Aktiv an der Verschönerung unseres Stadtteils mitwirken.</p>
+                </div>
+                <div class="card">
+                    <h3>Engagement</h3>
+                    <p>Gemeinsam Projekte umsetzen, die den Stadtteil voranbringen.</p>
+                </div>
+            </div>
         </section>
+
+        <hr>
 
         <section id="news">
             <h2>Aktuelle Beiträge</h2>
+            
+            {% for post in site.posts limit:3 %}
             <article>
-                <h3>Erster Blog-Post</h3>
-                <p><small>Veröffentlicht am 11. Februar 2026</small></p>
-                <p>Das ist unser erster News-Beitrag auf unserer neuen Seite!</p>
+                <h3><a href="{{ post.url }}" style="text-decoration: none; color: inherit;">{{ post.title }}</a></h3>
+                <p><small>{{ post.date | date: "%d. %B %Y" }}</small></p>
+                <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+                <a href="{{ post.url }}" style="color: #0056b3; font-weight: bold;">Weiterlesen...</a>
             </article>
+            {% else %}
+            <p>Momentan gibt es noch keine Beiträge. Erstelle deine erste Datei im Ordner _posts!</p>
+            {% endfor %}
+
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="news.html" class="cta-button" style="background: #eee; color: #333;">Alle News ansehen</a>
+            </div>
+        </section>
+
+        <section id="kontakt">
+            <h2>Kontakt</h2>
+            <p>Habt ihr Fragen oder wollt mitmachen? Schreibt uns eine E-Mail an: <br>
+            <strong>info@wirsindweingarten.de</strong></p>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Wir sind Weingarten | Impressum & Datenschutz</p>
+        <p>&copy; 2026 Wir sind Weingarten</p>
+        <p>Gemeinsam sind wir Stark</p>
     </footer>
 
 </body>
