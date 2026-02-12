@@ -8,18 +8,20 @@
 </head>
 <body>
 
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/#ueber-uns">Über uns</a></li>
-            <li><a href="/news.html">News</a></li>
-            <li><a href="/#kontakt">Kontakt</a></li>
-        </ul>
-    </nav>
-
-    <header class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('{{ page.hero_image }}');">
-        <h1>Wir sind Weingarten</h1>
-        <p class="motto">Gemeinsam sind wir Stark</p>
+    <header class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('{{ page.hero_image }}');">
+        <nav class="top-nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/#ueber-uns">Über uns</a></li>
+                <li><a href="/news.html">News</a></li>
+                <li><a href="/#kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+        
+        <div class="hero-content">
+            <h1>Wir sind Weingarten</h1>
+            <p class="motto">Gemeinsam sind wir Stark</p>
+        </div>
     </header>
     
     {{ content }}
