@@ -6,9 +6,18 @@ hero_image: /images/weingarten-hero.jpg
 <main>
     <section id="ueber-uns">
         <h2>Über unser Bündnis</h2>
-        <p>Hier kommt dein Infotext hin...</p>
+        <p>Hier kommt dein Infotext hin. Wir setzen uns leidenschaftlich für Weingarten ein...</p>
+        
         <div class="grid">
+            <div class="card">
+                <h3>Nachbarschaft</h3>
+                <p>Miteinander statt Nebeneinander.</p>
             </div>
+            <div class="card">
+                <h3>Kultur</h3>
+                <p>Traditionen bewahren und Neues wagen.</p>
+            </div>
+        </div>
     </section>
 
     <hr>
@@ -17,13 +26,20 @@ hero_image: /images/weingarten-hero.jpg
         <h2>Aktuelle Beiträge</h2>
         {% for post in site.posts limit:3 %}
         <article>
-            <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+            <h3><a href="{{ post.url }}" style="color:#8b0000; text-decoration:none;">{{ post.title }}</a></h3>
             <p><small>{{ post.date | date: "%d. %B %Y" }}</small></p>
             <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+            <a href="{{ post.url }}">Weiterlesen...</a>
         </article>
         {% endfor %}
-        <div style="text-align: center;">
-            <a href="/news.html" class="cta-button" style="background: #eee; color: #333;">Alle News ansehen</a>
+        
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="/news.html" class="cta-button">Alle News ansehen</a>
         </div>
+    </section>
+
+    <section id="kontakt">
+        <h2>Kontakt</h2>
+        <p>E-Mail: <strong>info@wirsindweingarten.de</strong></p>
     </section>
 </main>
